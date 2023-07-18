@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 });
 
 app.use(authRoute);
-app.use(whatsappRoute);
+// app.use(whatsappRoute);
 app.use(antrianRoute);
 app.use(periksaRoute);
 app.use(jadwalRoute);
