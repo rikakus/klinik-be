@@ -5,7 +5,7 @@ const xss = require("xss-clean");
 const cors = require("cors");
 const path = require("path");
 const authRoute = require("./src/route/auth.route");
-// const whatsappRoute = require("./src/route/whatsapp.route");
+const whatsappRoute = require("./src/route/whatsapp.route");
 const antrianRoute = require("./src/route/antrian.route");
 const periksaRoute = require("./src/route/periksa.route");
 const jadwalRoute = require("./src/route/jadwal.route");
@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 });
 
 app.use(authRoute);
-// app.use(whatsappRoute);
+app.use(whatsappRoute);
 app.use(antrianRoute);
 app.use(periksaRoute);
 app.use(jadwalRoute);
