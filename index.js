@@ -39,5 +39,3 @@ const APP_PORT = process.env.PORT || 3003;
 app.listen(APP_PORT, () => {
   console.log(`service running on PORT ${APP_PORT}`);
 });
-
-export default app
