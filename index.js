@@ -5,17 +5,13 @@ const xss = require("xss-clean");
 const cors = require("cors");
 const path = require("path");
 const authRoute = require("./src/route/auth.route");
-const whatsappRoute = require("./src/route/whatsapp.route");
+// const whatsappRoute = require("./src/route/whatsapp.route");
 const antrianRoute = require("./src/route/antrian.route");
 const periksaRoute = require("./src/route/periksa.route");
 const jadwalRoute = require("./src/route/jadwal.route");
 const penggunaRoute = require("./src/route/pengguna.route");
 
 const app = express();
-const browser = await puppeteer.launch({
-  args: ["--no-sandbox", "--disable-setuid-sandbox"],
-});
-app.use(browser);
 app.use(bodyParser.json());
 app.use(xss());
 app.use(helmet());
@@ -31,7 +27,7 @@ app.use((req, res, next) => {
 });
 
 app.use(authRoute);
-app.use(whatsappRoute);
+// app.use(whatsappRoute);
 app.use(antrianRoute);
 app.use(periksaRoute);
 app.use(jadwalRoute);
