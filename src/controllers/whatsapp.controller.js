@@ -5,7 +5,7 @@ const date = require("../helpers/date");
 const { Client } = require("whatsapp-web.js");
 const client = new Client({
   puppeteer: {
-    args: ["--enable-gpu"],
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
     headless: true,
   },
 });
