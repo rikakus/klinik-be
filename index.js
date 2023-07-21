@@ -15,11 +15,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(xss());
 app.use(helmet());
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+app.use(cors());
 
 app.use((req, res, next) => {
   res.header("Cross-Origin-Resource-Policy", "cross-origin");

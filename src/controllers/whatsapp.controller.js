@@ -3,7 +3,11 @@ const { v4: uuidv4 } = require("uuid");
 const { moment } = require("moment");
 const date = require("../helpers/date");
 const { Client } = require("whatsapp-web.js");
-const client = new Client();
+const client = new Client({
+  puppeteer: {
+    headless: true,
+  },
+});
 const fs = require("fs");
 
 const qrcode = require("qrcode");
