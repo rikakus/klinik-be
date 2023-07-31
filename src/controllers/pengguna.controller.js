@@ -9,6 +9,18 @@ const sendEmailPassword = require("../helpers/sendPassword");
 const penggunaModel = require("../models/pengguna.model");
 const authModel = require("../models/auth.model");
 
+const getToken = () => {
+  let digits = "";
+  const numberOfDigits = 6;
+
+  for (let i = 0; i < numberOfDigits; i++) {
+    let randomDigit = Math.floor(Math.random() * 9) + 1;
+    digits += randomDigit.toString();
+  }
+
+  return digits;
+};
+
 module.exports = {
   pengguna: async (req, res) => {
     try {

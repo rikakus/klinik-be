@@ -12,7 +12,7 @@ const getToken = () => {
   const numberOfDigits = 6;
 
   for (let i = 0; i < numberOfDigits; i++) {
-    let digit = Math.floor(Math.random() * 9) + 1;
+    let randomDigit = Math.floor(Math.random() * 9) + 1;
     digits += randomDigit.toString();
   }
 
