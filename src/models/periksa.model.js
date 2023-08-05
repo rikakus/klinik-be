@@ -23,8 +23,8 @@ const periksaModel = {
   r.keluhan,
   r.nasihat,
   r.diagnosa,
+  IFNULL(p2.nama, '') AS namaDokter,
   r.resep_dokter AS resepDokter,
-  p2.nama AS namaDokter,
   r.sudah_selesai AS sudahSelesai,
   r.dibuat,
   r.diupdate
@@ -32,7 +32,7 @@ FROM
   riwayat r
 INNER JOIN
   pengguna p1 ON r.id_pengguna = p1.id
-INNER JOIN
+LEFT JOIN
   pengguna p2 ON r.id_dokter = p2.id;
 `,
         (err, res) => {

@@ -45,7 +45,7 @@ module.exports = {
     try {
       const id = req.params.id;
       periksaModel
-        .periksaDokter()
+        .periksaDokterById(id)
         .then(async (result) => {
           success(res, result, "success", "Berhasil Mendapatkan Riwayat");
         })
