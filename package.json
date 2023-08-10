@@ -23,7 +23,7 @@
     "nodemon": "^2.0.20",
     "qrcode": "^1.5.3",
     "uuid": "^9.0.0",
-    "whatsapp-web.js": "^1.21.0",
+    "whatsapp-web.js": "^1.22.1",
     "xss-clean": "^0.1.1"
   }
 }
