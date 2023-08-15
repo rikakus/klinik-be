@@ -4,7 +4,21 @@ const periksaModel = {
   periksa: (id) => {
     return new Promise((resolve, reject) => {
       db.query(
-        `SELECT * FROM riwayat WHERE id_pengguna='${id}'`,
+        `SELECT
+r.id,
+p1.nama AS nama,
+r.keluhan,
+r.nasihat,
+r.diagnosa,
+r.resep_dokter AS resepDokter,
+p2.nama AS namaDokter,
+r.sudah_selesai AS sudahSelesai,
+r.dibuat,
+r.diupdate
+FROM riwayat r
+INNER JOIN pengguna p1 ON r.id_pengguna = p1.id
+INNER JOIN pengguna p2 ON r.id_dokter = p2.id WHERE id_pengguna='${id}'
+`,
         (err, res) => {
           if (err) {
             reject(err);
